@@ -1,4 +1,12 @@
-__pycache__/ 
-*.pyc 
-.env 
-*.log 
+# Python cache
+__pycache__/
+*.pyc
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage.xml
+
+# Logs and screenshots
+*.log
+screenshots/*.png
