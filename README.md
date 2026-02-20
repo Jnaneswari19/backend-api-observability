@@ -165,9 +165,3 @@ This project meets all evaluator requirements:
 - Structured JSON logging  
 - Unit + integration tests with >90% coverage  
 - README with badges, docs, screenshots  
-- CI/CD workflow for automated testing and coverage badge updates
-```
-
----
-
-backend-api-observability
