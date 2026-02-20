@@ -1,6 +1,3 @@
-Here’s a **final polished README.md** you can drop into your repo `backend-api-observability`. It includes badges, screenshots placeholders, endpoint docs, rate limiting details, observability instructions, and testing — everything evaluators expect:
-
-```markdown
 # Backend API Observability
 
 ![Coverage](coverage.svg)  
