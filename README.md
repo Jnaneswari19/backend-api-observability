@@ -5,6 +5,8 @@ Here’s a **final polished README.md** you can drop into your repo `backend-api
 
 ![Coverage](coverage.svg)  
 ![CI](https://github.com/Jnaneswari19/backend-api-observability/actions/workflows/tests.yml/badge.svg)
+![Tests](https://github.com/Jnaneswari19/backend-api-observability/actions/workflows/tests.yml/badge.svg)
+
 
 ## 🚀 Overview
 A production‑ready backend API built with **Flask**, **Docker**, **Redis**, **Prometheus**, and **Grafana**.  
