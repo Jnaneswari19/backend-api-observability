@@ -3,3 +3,5 @@ loguru
 prometheus-client
 redis
 pytest
+coverage-badge
+pytest-cov

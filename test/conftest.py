@@ -1,9 +1,5 @@
 import pytest
-import sys, os
-
-# Ensure /app is on sys.path so 'api' package can be imported
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
+import redis
 from api.src.main import app
 
 @pytest.fixture
@@ -11,3 +7,9 @@ def client():
     app.testing = True
     with app.test_client() as client:
         yield client
+
+@pytest.fixture(autouse=True)
+def reset_rate_limit():
+    # Clear Redis before each test to avoid state leakage
+    r = redis.Redis(host="redis", port=6379, decode_responses=True)
+    r.flushdb()

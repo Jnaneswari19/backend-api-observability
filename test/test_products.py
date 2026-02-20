@@ -1,16 +1,5 @@
-import pytest
-from flask import Flask
-from api.src.routes.products import products_bp
 from api.src.services.product_service import ProductService
 from api.src.models.product import Product
-
-@pytest.fixture
-def client():
-    app = Flask(__name__)
-    app.register_blueprint(products_bp)
-    app.testing = True
-    with app.test_client() as client:
-        yield client
 
 def test_product_model_to_dict():
     product = Product("Phone", "Smartphone", 800)
@@ -34,14 +23,14 @@ def test_create_product_success(client):
         "price": 1200
     })
     assert response.status_code == 201
-    data = response.json
+    data = response.get_json()
     assert "id" in data
     assert data["name"] == "Laptop"
 
 def test_create_product_invalid(client):
     response = client.post("/api/products", json={"name": "Laptop"})
     assert response.status_code == 400
-    assert "error" in response.json
+    assert "error" in response.get_json()
 
 def test_list_products(client):
     client.post("/api/products", json={
@@ -51,6 +40,6 @@ def test_list_products(client):
     })
     response = client.get("/api/products")
     assert response.status_code == 200
-    products = response.json
+    products = response.get_json()
     assert isinstance(products, list)
     assert len(products) >= 1
