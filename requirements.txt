@@ -1,0 +1,5 @@
+flask
+loguru
+prometheus-client
+redis
+pytest

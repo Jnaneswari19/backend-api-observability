@@ -1,0 +1,22 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "API Observability",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "API Requests",
+        "targets": [
+          { "expr": "api_requests_total" }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Rate Limit Hits",
+        "targets": [
+          { "expr": "rate_limit_hits_total" }
+        ]
+      }
+    ]
+  }
+}
